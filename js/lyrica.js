@@ -281,55 +281,93 @@ function playGame() {
 
 }	// end function playGame
 
-function gameMessageTakingItem(indexNum) {
-	gameMessage = "You take the " + item + ".";
-
-	//Add the item to the player's backpack 
-	backpack.push(item);
-
-	//Remove the item from the game world
-	items.splice(indexNum, 1);
-	itemLocations.splice(indexNum, 1);
-
-	//Display in the console for testing
-	console.log("World items: " + items);
-	console.log("backpack items: " + backpack);
-}
-
 var takeItem = () => {
 
 	//Find the index number of the item in the items array
 	var itemIndexNumber = items.indexOf(item);
-	// console.log(itemLocations[itemIndexNumber]);
-	// console.log(mapLocation);
+	console.log(itemLocations[itemIndexNumber]);
+	console.log(mapLocation);
 	//Does the item exist in the game world
 	//and is it at the player's current location?
 	if (itemIndexNumber !== -1 && itemLocations[itemIndexNumber] === mapLocation) {
 		//grabbing shovel
 		if ((itemLocations[itemIndexNumber] === mapLocation) && (items[itemIndexNumber] === "shovel")) {
-			gameMessageTakingItem(itemIndexNumber);
+			gameMessage = "You take the " + item + ".";
+
+			//Add the item to the player's backpack 
+			backpack.push(item);
+
+			//Remove the item from the game world
+			items.splice(itemIndexNumber, 1);
+			itemLocations.splice(itemIndexNumber, 1);
+
+			//Display in the console for testing
+			console.log("World items: " + items);
+			console.log("backpack items: " + backpack);
 		}
 
 		//checking if sword has been used to pick up key!
 		else if ((itemLocations[itemIndexNumber] === mapLocation) && (items[itemIndexNumber] === "key" && swordUsed === true)) {
-
 			gameMessage = "You take the " + item + ".";
-			gameMessageTakingItem();
+
+			//Add the item to the player's backpack 
+			backpack.push(item);
+
+			//Remove the item from the game world
+			items.splice(itemIndexNumber, 1);
+			itemLocations.splice(itemIndexNumber, 1);
+
+			//Display in the console for testing
+			console.log("World items: " + items);
+			console.log("backpack items: " + backpack);
 		}
 
 		//checking if shovel has been used to pick up money
 		else if (itemLocations[itemIndexNumber] === mapLocation && (items[itemIndexNumber] === "money" && shovelUsed === true)) {
-			gameMessageTakingItem();
+			gameMessage = "You take the " + item + ".";
+
+			//Add the item to the player's backpack 
+			backpack.push(item);
+
+			//Remove the item from the game world
+			items.splice(itemIndexNumber, 1);
+			itemLocations.splice(itemIndexNumber, 1);
+
+			//Display in the console for testing
+			console.log("World items: " + items);
+			console.log("backpack items: " + backpack);
 		}
 
 		//checking if potion has been used to pick up the sword
 		else if (itemLocations[itemIndexNumber] === mapLocation && (items[itemIndexNumber] === "sword" && potionUsed === true)) {
-			gameMessageTakingItem();
+			gameMessage = "You take the " + item + ".";
+
+			//Add the item to the player's backpack 
+			backpack.push(item);
+
+			//Remove the item from the game world
+			items.splice(itemIndexNumber, 1);
+			itemLocations.splice(itemIndexNumber, 1);
+
+			//Display in the console for testing
+			console.log("World items: " + items);
+			console.log("backpack items: " + backpack);
 		}
 
 		//checking if money has been used to buy the potion
 		else if (itemLocations[itemIndexNumber] === mapLocation && (items[itemIndexNumber] === "potion" && moneyUsed === true)) {
-			gameMessageTakingItem();
+			gameMessage = "You take the " + item + ".";
+
+			//Add the item to the player's backpack 
+			backpack.push(item);
+
+			//Remove the item from the game world
+			items.splice(itemIndexNumber, 1);
+			itemLocations.splice(itemIndexNumber, 1);
+
+			//Display in the console for testing
+			console.log("World items: " + items);
+			console.log("backpack items: " + backpack);
 		}
 		else {
 			gameMessage = `You must do something before you can take the '${items[itemIndexNumber].fontsize(12).toUpperCase()}'!`;
@@ -476,7 +514,7 @@ function useItem() {
 					//Reset the location's help message
 					helpMessages[mapLocation] = "";
 
-					itemLocations.push(mapLocation);
+					// itemLocations.push(mapLocation);
 					//remove key from backpack
 					backpack.splice(backpackIndexNumber, 1);
 
@@ -531,8 +569,8 @@ function render() {
 
 	//Display an item if there's one in this location
 	//1. Loop through all the game items
-	// console.log("mapLocation: ", mapLocation);
-	// console.log("itemlocations: ", itemLocations);
+	console.log("mapLocation: ", mapLocation);
+	console.log("itemlocations: ", itemLocations);
 	for (let i = 0; i < items.length; i++) {
 		//Find out if there's an item at this location
 		if (mapLocation === itemLocations[i]) {
