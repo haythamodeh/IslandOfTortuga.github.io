@@ -1,0 +1,206 @@
+@import url("https://fonts.googleapis.com/css2?family=Fredoka+One&family=Piedra&family=Tenali+Ramakrishna&display=swap");
+
+* {
+  font-family: Tenali Ramakrishn;
+  color: #000;
+  font-size: 18px;
+  padding: 0px;
+  margin: 0px;
+}
+
+@font-face {
+  font-family: Merriweather;
+  src: url("../fonts/Merriweather.ttf");
+}
+
+@font-face {
+  font-family: Merriweather-Bold;
+  src: url("../fonts/Merriweather-Bold.ttf");
+}
+
+@font-face {
+  font-family: Ginga;
+  src: url("../fonts/Ginga.ttf");
+}
+
+body {
+  background-image: url("../images/islandbg.jpg");
+  background-size: cover;
+  height: 97.85vh;
+  width: 100%;
+  background-position: center;
+}
+
+#stage {
+  width: 500px;
+  height: 708px;
+  position: relative;
+  background-image: url("../images/mapFrame2.jpeg");
+  background-size: contain;
+  background-position: center;
+  margin: 20px auto 0 auto;
+  box-shadow: 3px 3px 10px 2px rgba(0, 0, 0, 0.5);
+}
+#stage .gameImg {
+  box-shadow: #0000009c 0px 0px 20px 2px;
+  border-radius: 6px;
+}
+
+.map {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: mapZoom 2s ease;
+}
+@keyframes mapZoom {
+  from {
+    transform: scale(0) translate(-50%, -50%);
+  }
+  to {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+.hideMap,
+.hideNote {
+  display: none;
+  /* animation: hideMap 2s ease; */
+}
+/* @keyframes hideMap {
+  from {
+    top: 10%;
+    left: 5%;
+    transform: scale(1);
+  }
+  to {
+    top: 24.5%;
+    left: 0%;
+    transform: scale(0);
+  }
+} */
+.map .closeBtn {
+  background-color: rgb(247, 67, 67);
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  right: 0;
+  width: 70px;
+  text-align: center;
+  cursor: pointer;
+}
+.map img {
+  height: 340px;
+  width: 500px;
+}
+.note {
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  animation: noteZoom 2s ease;
+}
+@keyframes noteZoom {
+  from {
+    transform: scale(0) translate(-50%, -50%);
+  }
+  to {
+    transform: scale(1) translate(-50%, -50%);
+  }
+}
+.note img {
+  height: 540px;
+  width: 500px;
+}
+.note .closeBtn {
+  background-color: rgb(247, 67, 67);
+  color: white;
+  border-radius: 5px;
+  position: absolute;
+  right: 30px;
+  top: 10px;
+  width: 70px;
+  text-align: center;
+  cursor: pointer;
+}
+.mapIcon img {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  left: 0;
+  bottom: 0;
+  cursor: pointer;
+  animation: pulse 5s infinite;
+  transition: 0.5s ease;
+}
+.mapIcon img:hover {
+  height: 110px;
+  width: 110px;
+}
+.noteIcon img {
+  position: absolute;
+  height: 100px;
+  width: 100px;
+  right: 0;
+  bottom: 0;
+  cursor: pointer;
+  animation: pulse 5s infinite;
+  transition: 0.2s ease-in;
+}
+.noteIcon img:hover {
+  height: 110px;
+  width: 110px;
+}
+
+h1 {
+  text-align: center;
+  font-family: Piedra;
+  font-size: 50px;
+  padding-bottom: 10px;
+  padding-top: 80px;
+  font-weight: normal;
+}
+
+em {
+  font-size: 15px;
+  text-shadow: #fff 5px 0px 4px;
+}
+
+p {
+  width: 300px;
+  margin: 0px auto;
+  font-weight: 800;
+  text-shadow: #fff 5px 0px 4px;
+}
+
+img {
+  margin: 0px auto;
+  display: block;
+  margin-bottom: 20px;
+}
+
+input {
+  position: absolute;
+  bottom: 30px;
+  left: 135px;
+  width: 160px;
+  padding: 2px 2px 2px 5px;
+  border: 1px solid black;
+  background-color: rgba(255, 255, 255, 0.3);
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+}
+
+button {
+  position: absolute;
+  bottom: 30px;
+  left: 310px;
+  height: 25px;
+  width: 50px;
+  font-family: Merriweather;
+  font-size: 14px;
+  color: #000;
+  border: 1px solid #000;
+  border-radius: 10px;
+  background: linear-gradient(top, #a3a3a3, rgba(0, 0, 0, 0.2));
+  box-shadow: 3px 3px 5px rgba(0, 0, 0, 0.4);
+  user-select: none;
+}
